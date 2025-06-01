@@ -1,0 +1,48 @@
+OUTPUT:
+
+Execution time for Max: 251 milliseconds
+Execution time for Min: 101 milliseconds
+Average execution time: 176 milliseconds
+
+Process finished with exit code 0
+
+------------------------------------------------------------------------------------
+
+Representation Description:
+
+
+The problem states are represented using a 3x3 grid, where each cell of the grid can contain one of the following
+values:
+
+null: Indicates that the cell is empty.
+Player.MAX: Indicates that the cell contains a piece belonging to the Max player.
+Player.MIN: Indicates that the cell contains a piece belonging to the Min player.
+
+This representation captures the current state of the game board at any given point. Additionally, the Node class
+encapsulates this representation along with other attributes such as whether the node is a leaf node, the value assigned
+to the node, and the player whose turn it is to make a move.
+
+The representation allows us to easily generate children nodes by considering all possible valid moves from the current
+state. The generateChildren method generates child nodes based on the current player's turn and the current phase of the
+game (placement or movement phase). It also ensures that the new states are valid and consistent with the rules of the
+game.
+
+Overall, this representation effectively captures the problem states and facilitates the implementation of the heuristic
+minimax algorithm with alpha-beta pruning
+
+-------------------------------------------------------------------------------------
+
+Project Description:
+
+The output is from the class Driver.java, if you run it in any Java editor, you should get similar results.
+MiniMaxAlgorithm.java contains the heuristic and the function that we can use to calculate wins. Player.java contains
+an enum that made it easier to view the display which we can print using Node.java's printBoard method, which provides
+output for testing and debugging purposes in this format:
+Example:   Max  -   Min
+           Min  Max  -
+           Min  Max  -
+
+Where we use a 2d array of a Player object. Node.java represents a current state and contains functions to
+generateChildren, if we are in a terminal state, if we are a leaf node, as well as move places over from one spot to an
+empty spot. Using the alphabeta pruning, the output was much faster when I just ran it with heuristicMiniMax function
+because we are doing our alphabeta pruning.
